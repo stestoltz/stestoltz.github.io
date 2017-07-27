@@ -1,0 +1,33 @@
+body {
+    font-family: 'Constantia', sans-serif;
+    color: #202025;
+    background-color: #202025;
+    margin: 0;
+    padding-top: 10px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Palatino', 'Palatino Linotype', serif;
+    margin: 0 0;
+    padding: 0 0;
+}
+
+header, footer {
+    background: linear-gradient(90deg, #094EE8 75%, #202025);
+    color: #E0E0E0;
+    padding: 10px 10px;
+    margin: 0 0;
+}
+
+div.out {
+    width: 95%;
+    margin: 20px auto;
+    background-color: #FDFDFD;
+    border: 5px solid black;
+    border-radius: 10px;
+}
+
+div.in {
+    padding: 20px 20px;
+    margin: auto;
+}
