@@ -14,10 +14,60 @@
 
         <div class="out">
             <div class="in">
-                <div class="content">Testing 1</div>
-                <div class="content">Testing 2</div>
-                <div class="content">Testing 3</div>
-                <div class="content">Testing 4</div>
+                <div class="column first">
+                    <fieldset>
+                        <legend>Add Item</legend>
+
+                        <form onsubmit="addItem();">
+                            <input type="text" name="item" placeholder="Item Name" required>
+                            <input type="number" name="unit-price" step=".01" min="0" placeholder="Unit Price" required>
+                            <input type="number" name="quantity" step="1" min="0" placeholder="Quantity" required>
+                            <input type="submit" name="submit" value="Add Item">
+                        </form>
+                    </fieldset>
+
+                    <table id="main-table">
+                        <thead><tr>
+                            <td onclick="sortby(0)"><a href="#">Item</a></td>
+                            <td onclick="sortby(1)"><a href="#">Unit $</a></td>
+                            <td onclick="sortby(2)"><a href="#">Quantity</a></td>
+                            <td onclick="sortby(3)"><a href="#">Cost</a></td>
+                        </tr></thead>
+                        <tbody id="content-template"><!--<tr>
+                            <td>{{ITEM}}</td>
+                            <td>{{UNIT}}</td>
+                            <td>{{QUANTITY}}</td>
+                            <td>{{COST}}</td>
+                        </tr>--><tr>
+                            <td>ca</td>
+                            <td>2</td>
+                            <td>10</td>
+                            <td>zzya</td>
+                        </tr><tr>
+                            <td>c</td>
+                            <td>1</td>
+                            <td>11</td>
+                            <td>zzz</td>
+                        </tr></tbody>
+                    </table>
+
+                    <hr>
+
+                    <div class="table-bottom">
+                        <input type="button" onclick="save();" name="save" id="save" value="Copy to Clipboard">
+                        <div class="total">
+                            <div class="total-marker">Total:&nbsp;</div>
+                            <div class="total-amount"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column second">
+                    <div class="json">
+                        <div class="json-prompt">Enter JSON Values to Fill List</div>
+                        <div class="paste"><input type="button" name="paste" id="paste" onclick="paste();" value="Paste"></div>
+                    </div>
+                    <textarea></textarea>
+                </div>
             </div>
         </div>
 
