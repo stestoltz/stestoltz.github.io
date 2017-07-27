@@ -34,13 +34,13 @@ div.in {
 div.content {
     background-color: black;
     color: white;
-    min-width: 250px;
+    min-width: 200px;
     width: 49%;
     max-width: 100%;
     display: inline-block;
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 500px) {
     div.content {
         width: 100%;
     }
