@@ -18,55 +18,53 @@
                     <fieldset>
                         <legend>Add Item</legend>
 
-                        <form onsubmit="addItem();">
-                            <input type="text" name="item" placeholder="Item Name" required>
-                            <input type="number" name="unit-price" step=".01" min="0" placeholder="Unit Price" required>
-                            <input type="number" name="quantity" step="1" min="0" placeholder="Quantity" required>
+                        <form id="additem" method="GET" onsubmit="return add();" autocomplete="off">
+                            <input type="text" id="item-name" name="item" placeholder="Item Name" required>
+                            <input type="number" id="unitprice" name="unitprice" step=".01" min="0" placeholder="Unit Price" required>
+                            <input type="number" id="quantity" name="quantity" step="1" min="0" placeholder="Quantity" required>
                             <input type="submit" name="submit" value="Add Item">
                         </form>
                     </fieldset>
 
-                    <table id="main-table">
+                    <table id="main-table" class="name asc">
                         <thead><tr>
-                            <td onclick="sortby(0)"><a href="#">Item</a></td>
-                            <td onclick="sortby(1)"><a href="#">Unit $</a></td>
-                            <td onclick="sortby(2)"><a href="#">Quantity</a></td>
-                            <td onclick="sortby(3)"><a href="#">Cost</a></td>
+                            <th onclick="sortby('name')">
+                                Item
+                                <i class="sort-icon name asc">&#9650;</i>
+                                <i class="sort-icon name desc">&#9660;</i>
+                            </th>
+                            <th onclick="sortby('unitprice')">
+                                Unit Price
+                                <i class="sort-icon unitprice asc">&#9650;</i>
+                                <i class="sort-icon unitprice desc">&#9660;</i>
+                            </th>
+                            <th onclick="sortby('quantity')">
+                                Quantity
+                                <i class="sort-icon quantity asc">&#9650;</i>
+                                <i class="sort-icon quantity desc">&#9660;</i>
+                            </th>
+                            <th onclick="sortby('cost')">
+                                Cost
+                                <i class="sort-icon cost asc">&#9650;</i>
+                                <i class="sort-icon cost desc">&#9660;</i>
+                            </th>
                         </tr></thead>
-                        <tbody id="content-template"><!--<tr>
-                            <td>{{ITEM}}</td>
-                            <td>{{UNIT}}</td>
-                            <td>{{QUANTITY}}</td>
-                            <td>{{COST}}</td>
-                        </tr>--><tr>
-                            <td>ca</td>
-                            <td>2</td>
-                            <td>10</td>
-                            <td>zzya</td>
-                        </tr><tr>
-                            <td>c</td>
-                            <td>1</td>
-                            <td>11</td>
-                            <td>zzz</td>
-                        </tr></tbody>
+                        <tbody id="content-template">
+                        </tbody>
                     </table>
 
                     <hr>
 
                     <div class="table-bottom">
-                        <input type="button" onclick="save();" name="save" id="save" value="Copy to Clipboard">
+                        <input type="button" onclick="save();" name="save" id="save" value="Generate and Copy">
                         <div class="total">
-                            <div class="total-marker">Total:&nbsp;</div>
-                            <div class="total-amount"></div>
+                            <label for="total-amount" class="total-marker">Total:&nbsp;</label>
+                            <span id="total-amount"></span>
                         </div>
                     </div>
                 </div>
                 <div class="column second">
-                    <div class="json">
-                        <div class="json-prompt">Enter JSON Values to Fill List</div>
-                        <div class="paste"><input type="button" name="paste" id="paste" onclick="paste();" value="Paste"></div>
-                    </div>
-                    <textarea></textarea>
+                    <textarea id="json" placeholder="Click Generate to fill me with a printer-friendly version."></textarea>
                 </div>
             </div>
         </div>
@@ -75,7 +73,7 @@
             <h4>by Stephen S</h4>
         </footer>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
         <script src="js/planningaide.js"> type="text/javascript"</script>
     </body>
 </html>

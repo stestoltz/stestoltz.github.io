@@ -17,7 +17,7 @@ h1, h2, h3, h4, h5, h6 {
 
 header, footer {
     background: linear-gradient(90deg, #073E88 75%, #202025);
-    color: #E0E0E0;
+    color: #F5F5F5;
     padding: 10px 10px;
     margin: 0 0;
     border-top: 5px solid black;
@@ -55,6 +55,7 @@ div.column.first {
 
 div.column.second {
     padding-left: 5px;
+    height: 100%;
 }
 
 table#main-table {
@@ -85,7 +86,7 @@ input[type=text], input[type=number] {
 
 textarea {
     width: 100%;
-    min-height: 100px;
+    min-height: 300px;
     max-width: 100%;
     background-color: #101010;
     border: 2px solid #073E88;
@@ -102,7 +103,7 @@ textarea {
 
 input[type=submit], input[type=button] {
     background-color: #073E88;
-    color: #E0E0E0;
+    color: #F5F5F5;
     border-radius: 5px;
     border-color: black;
 }
@@ -115,23 +116,9 @@ input {
     box-sizing: border-box;
 }
 
-.column .json-prompt {
-    display: inline-block;
-}
-
-#save, #paste {
+#save {
     display: inline-block;
     width: auto;
-}
-
-#paste {
-    text-align: right;
-}
-
-.paste {
-    display: inline-block;
-    float: right;
-    margin-top: -9px;
 }
 
 div.table-bottom {
@@ -141,16 +128,42 @@ div.table-bottom {
 div.total {
     display: inline-block;
     text-align: right;
-    width: 50%;
+    width: 60%;
 }
 
 .total-marker {
     display: inline-block;
 }
 
-.total-amount {
+#total-amount {
     min-width: 100px;
     display: inline-block;
+}
+
+th {
+    text-align: left;
+}
+th i {
+    float: right;
+    margin-right: 15px;
+    text-align: right;
+    text-decoration: none;
+}
+
+.sort-icon {
+    display: none;
+}
+
+.name .name, .unitprice .unitprice, .quantity .quantity, .cost .cost {
+    display: block;
+}
+
+.asc .desc, .desc .asc {
+    display: none;
+}
+
+#main-table th {
+    cursor: pointer;
 }
 
 
@@ -160,7 +173,7 @@ div.total {
         padding-left: 0;
     }
     div.column.first {
-        padding-bottom: 50px;
+        padding-bottom: 25px;
         padding-right: 0;
     }
 }
